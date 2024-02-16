@@ -3,7 +3,7 @@ const esbuild = require("esbuild");
     await esbuild.build({
         entryPoints: ["./src/main.ts"],
         bundle: true,
-        minify: true,
+        minify: false,
         sourcemap: false,
         outdir: "./dist",
         platform: "node",

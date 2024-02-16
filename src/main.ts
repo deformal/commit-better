@@ -41,13 +41,9 @@ async function gitCommit() {
   rl.question(question, async (message: string) => {
     await gitAddAll();
     const command = `git commit -m '${message}'`;
-    const { stdout, stderr } = await execCommand(command);
-    if (stderr.length) {
-      console.info(stderr);
-    }
-    if (stdout) {
-      console.info(stdout);
-    }
+    await execCommand(command)
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
     rl.close();
   });
 }
