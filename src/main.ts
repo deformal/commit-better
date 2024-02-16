@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import { exec } from "child_process";
-import { CreateMarkdownFile } from "./utils/commitMdGen";
-import { AskQuestions } from "@utils/questions";
+import { exec } from 'child_process';
+import { CreateMarkdownFile } from './utils/commitMdGen';
+import { AskQuestions } from '@utils/questions';
 
 async function gitCommit() {
   const askQuestion = new AskQuestions();
-  const command = `git commit -F $PWD/.git/commit_summary.md`;
+  const command = 'git commit -F $PWD/.git/commit_summary.md';
   await askQuestion.askTitle();
   await askQuestion.askFeatureLinks();
   await askQuestion.askIssueLinks();

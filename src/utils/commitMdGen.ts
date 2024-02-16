@@ -1,19 +1,19 @@
-import * as fs from "fs";
-import { commitQuestion } from "@utils/commitQuestions";
+import * as fs from 'fs';
+import { commitQuestion } from '@utils/commitQuestions';
 
 export function CreateMarkdownFile() {
   const content: string = `
 ${commitQuestion.getTitle().trim()}
 
 Features
-   ${commitQuestion.getFeature().split(",").join("\n   ")}
+   ${commitQuestion.getFeature().split(',').join('\n   ')}
 
 Fixes
-   ${commitQuestion.getIssue().split(",").join("\n   ")}
+   ${commitQuestion.getIssue().split(',').join('\n   ')}
 
 Improvements
-   ${commitQuestion.getImprovement().split(",").join("\n   ")}
+   ${commitQuestion.getImprovement().split(',').join('\n   ')}
 `;
 
-  fs.writeFileSync(".git/commit_summary.md", content);
+  fs.writeFileSync('.git/commit_summary.md', content);
 }
