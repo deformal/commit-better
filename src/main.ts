@@ -48,6 +48,9 @@ async function gitCommit() {
       if (stderr) {
         console.info(stderr);
       }
+      if (stdout) {
+        console.info(stdout);
+      }
       rl.close();
     });
   } catch (err) {
