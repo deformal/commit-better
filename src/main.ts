@@ -12,17 +12,13 @@ function gitCommit() {
 
   rl.question(question, (message: string) => {
     const command = `git commit -m '${message}'`;
+
     exec(command, (error, stderr, stdout) => {
-      if (error) {
-        console.info(error.message);
-      }
-      if (stderr) {
-        console.error(stderr);
-      }
-      if (stdout) {
-        console.info(stdout);
-      }
+      if (error) console.info(error.message);
+      if (stderr) console.error(stderr);
+      if (stdout) console.info(stdout);
     });
+
     rl.close();
   });
 }
