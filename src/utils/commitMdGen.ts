@@ -3,15 +3,6 @@ import { commitQuestion } from "@utils/commitQuestions";
 
 export function CreateMarkdownFile() {
   const content: string = `
-
-
-
-
-
-
-
-
-  
 ${commitQuestion.getTitle().trim()}
 
 Features
