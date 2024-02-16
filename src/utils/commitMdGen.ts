@@ -1,10 +1,9 @@
 import * as fs from "fs";
-import { CommitQuestions } from "./types";
+import { CommitQuestions } from "../types";
 
 export function CreateMarkdownFile(data: CommitQuestions) {
   const content: string = `
-Commit Summary
-${data.summay}
+${data.summay.toLocaleUpperCase().trim()}
 ____
 
 Features
