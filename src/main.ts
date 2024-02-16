@@ -13,7 +13,7 @@ async function gitCommit() {
   await askQuestion.askIssueLinks();
   await askQuestion.askImprovementLinks();
   const commitMessages = new CommitQuestions();
-  console.log(commitMessages.getTitle);
+  console.log(commitMessages.getTitle());
   CreateMarkdownFile();
   exec(command, (err, stderr, stdout) => {
     if (stderr) console.error(stderr);
