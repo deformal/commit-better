@@ -14,8 +14,7 @@ async function gitCommit() {
     issuesLinks: [],
     improvementsLinks: [],
   };
-  await askSummary(questions);
-
+  questions.summay = await askSummary(questions);
   CreateMarkdownFile(questions);
 
   exec(command, (err, stderr, stdout) => {
