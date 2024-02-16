@@ -6,13 +6,13 @@ export function CreateMarkdownFile() {
 ${commitQuestion.getTitle().trim()}
 
 Features
-  a. ${commitQuestion.getFeature().trim()}
+    ${commitQuestion.getFeature().split(",").join("\n")}
 
-Issues Fixed
-  a. ${commitQuestion.getIssue().trim()}
+Fixes
+    ${commitQuestion.getIssue().split(",").join("\n")}
 
 Improvements
-  a. ${commitQuestion.getImprovement().trim()}
+    ${commitQuestion.getImprovement().split(",").join("\n")}
 `;
 
   fs.writeFileSync(".git/commit_summary.md", content);

@@ -25,7 +25,7 @@ export class AskQuestions {
       });
 
       rl.question(
-        "Features resolved enter description or paste a link: ",
+        "Features resolved enter description or paste a links(seperate by comma): ",
         (ans) => {
           rl.close();
           commitQuestion.setFeature(ans);
@@ -43,7 +43,7 @@ export class AskQuestions {
       });
 
       rl.question(
-        "Issues resolved enter description or paste a link: ",
+        "Issues resolved enter description or paste a links(seperate by comma): ",
         (ans) => {
           rl.close();
           commitQuestion.setIssue(ans);
@@ -61,7 +61,7 @@ export class AskQuestions {
       });
 
       rl.question(
-        "Improvements resolved enter description or paste a link: ",
+        "Improvements resolved enter description or paste a links(seperate by comma): ",
         (ans) => {
           rl.close();
           commitQuestion.setImporovement(ans);
