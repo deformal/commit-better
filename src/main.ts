@@ -23,9 +23,12 @@ async function gitAddAll() {
   try {
     const gitStatus = "git add .";
     const { stdout, stderr } = await execCommand(gitStatus);
-    console.log(stdout);
     if (stderr) {
       throw new Error(stderr);
+    }
+
+    if (stdout) {
+      console.info(stdout);
     }
   } catch (err) {
     const error = err as Error;
