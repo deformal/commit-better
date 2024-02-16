@@ -7,17 +7,17 @@ export function CreateMarkdownFile() {
 
 ${commitQuestion.getTitle().trim()}
 
-I. Features
+Features
 
-${commitQuestion.getFeature().split(",").join("\n")}
+${commitQuestion.getFeature().split(",").join("\n   ")}
 
-II. Fixes
+Fixes
 
-${commitQuestion.getIssue().split(",").join("\n")}
+${commitQuestion.getIssue().split(",").join("\n   ")}
 
-III. Improvements
+Improvements
 
-${commitQuestion.getImprovement().split(",").join("\n")}
+${commitQuestion.getImprovement().split(",").join("\n   ")}
 `;
 
   fs.writeFileSync(".git/commit_summary.md", content);
