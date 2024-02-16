@@ -20,19 +20,14 @@ async function gitStatus() {
 }
 
 async function gitAddAll() {
-  try {
-    const gitStatus = "git add .";
-    const { stdout, stderr } = await execCommand(gitStatus);
-    if (stderr) {
-      throw new Error(stderr);
-    }
+  const gitStatus = "git add .";
+  const { stdout, stderr } = await execCommand(gitStatus);
+  if (stderr) {
+    throw new Error(stderr);
+  }
 
-    if (stdout) {
-      console.info(stdout);
-    }
-  } catch (err) {
-    const error = err as Error;
-    console.error(error.message);
+  if (stdout) {
+    console.info(stdout);
   }
 }
 
