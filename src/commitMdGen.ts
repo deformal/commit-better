@@ -1,20 +1,23 @@
 import * as fs from "fs";
+import { CommitQuestions } from "./types";
 
-export function CreateMarkdownFile(summary: string): void {
+export function CreateMarkdownFile(data: CommitQuestions) {
   const content: string = `
-# Commit Summary
-${summary}
-## Features
-## Issues Fixed
-## Improvements
+Commit Summary
+${data.summay}
+____
+
+Features
+${data.featureLinks}
+____
+
+Issues Fixed
+${data.issuesLinks}
+____
+
+Improvements
+${data.improvementsLinks}
 `;
 
   fs.writeFileSync(".git/commit_summary.md", content);
-  console.log("Content appended to Markdown file successfully.");
 }
-
-const exampleSummary: string = `
-- Added feature X
-- Fixed issue Y
-- Refactored code for better readability
-`;
