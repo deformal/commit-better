@@ -46,7 +46,7 @@ async function gitCommit() {
       const command = `git commit -m '${message}'`;
       const { stdout, stderr } = await execCommand(command);
       if (stderr) {
-        throw new Error(stderr);
+        console.info(stderr);
       }
       rl.close();
     });
