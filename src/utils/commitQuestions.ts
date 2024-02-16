@@ -1,4 +1,4 @@
-export class CommitQuestions {
+class CommitQuestions {
   private title: string = "";
   private feature: string = "";
   private issues: string = "";
@@ -40,3 +40,4 @@ export class CommitQuestions {
     return this.improvement;
   }
 }
+export const commitQuestion = new CommitQuestions();

@@ -1,9 +1,7 @@
 import { createInterface } from "readline";
-import { CommitQuestions } from "@utils/commitQuestions";
+import { commitQuestion } from "@utils/commitQuestions";
 
 export class AskQuestions {
-  private commitQuestion = new CommitQuestions();
-
   public async askTitle(): Promise<string> {
     return new Promise((resolve) => {
       const rl = createInterface({
@@ -13,7 +11,7 @@ export class AskQuestions {
 
       rl.question("Please Enter a commit title: ", (ans) => {
         rl.close();
-        this.commitQuestion.setTitle(ans);
+        commitQuestion.setTitle(ans);
         resolve(ans);
       });
     });
@@ -30,7 +28,7 @@ export class AskQuestions {
         "Features resolved enter description or paste a link: ",
         (ans) => {
           rl.close();
-          this.commitQuestion.setFeature(ans);
+          commitQuestion.setFeature(ans);
           resolve(ans);
         }
       );
@@ -48,7 +46,7 @@ export class AskQuestions {
         "Issues resolved enter description or paste a link: ",
         (ans) => {
           rl.close();
-          this.commitQuestion.setIssue(ans);
+          commitQuestion.setIssue(ans);
           resolve(ans);
         }
       );
@@ -66,7 +64,7 @@ export class AskQuestions {
         "Improvements resolved enter description or paste a link: ",
         (ans) => {
           rl.close();
-          this.commitQuestion.setImporovement(ans);
+          commitQuestion.setImporovement(ans);
           resolve(ans);
         }
       );
