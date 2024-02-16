@@ -3,17 +3,19 @@ import { commitQuestion } from "@utils/commitQuestions";
 
 export function CreateMarkdownFile() {
   const content: string = `
+
+
 ${commitQuestion.getTitle().trim()}
 
-a. Features
+I. Features
 
 ${commitQuestion.getFeature().split(",").join("\n")}
 
-b. Fixes
+II. Fixes
 
 ${commitQuestion.getIssue().split(",").join("\n")}
 
-c. Improvements
+III. Improvements
 
 ${commitQuestion.getImprovement().split(",").join("\n")}
 `;
