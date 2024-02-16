@@ -9,3 +9,5 @@ A simple tool do a better commit, which allows better communication between soft
 ## Use
 
 1.  Type `commit-better`
+
+Made with love by ❤️ deformal
