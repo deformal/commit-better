@@ -1,21 +1,22 @@
 import * as fs from "fs";
-import { CommitQuestions } from "../types";
+import { CommitQuestions } from "@utils/commitQuestions";
 
-export function CreateMarkdownFile(data: CommitQuestions) {
+export function CreateMarkdownFile() {
+  const commitTexts = new CommitQuestions();
   const content: string = `
-${data.summay.toLocaleUpperCase().trim()}
+${commitTexts.getTitle().trim()}
 ____
 
 Features
-${data.featureLinks}
+${commitTexts.getFeature().trim()}
 ____
 
 Issues Fixed
-${data.issuesLinks}
+${commitTexts.getIssue().trim()}
 ____
 
 Improvements
-${data.improvementsLinks}
+${commitTexts.getImprovement().trim()}
 `;
 
   fs.writeFileSync(".git/commit_summary.md", content);

@@ -2,20 +2,17 @@
 
 import { exec } from "child_process";
 import { CreateMarkdownFile } from "./utils/commitMdGen";
-import { CommitQuestions } from "./types";
-import { askTitle } from "@utils/questions";
+import { CommitQuestions } from "./utils/commitQuestions";
+import { AskQuestions } from "@utils/questions";
 
 async function gitCommit() {
+  const askQuestion = new AskQuestions();
   const command = `git commit -F $PWD/.git/commit_summary.md`;
-  const questions: CommitQuestions = {
-    summay: "",
-    featureLinks: [],
-    issuesLinks: [],
-    improvementsLinks: [],
-  };
-  questions.summay = await askTitle(questions);
-  CreateMarkdownFile(questions);
-
+  await askQuestion.askTitle();
+  await askQuestion.askFeatureLinks();
+  await askQuestion.askIssueLinks();
+  await askQuestion.askImprovementLinks();
+  CreateMarkdownFile();
   exec(command, (err, stderr, stdout) => {
     if (stderr) console.error(stderr);
     if (stdout) console.info(stdout);
