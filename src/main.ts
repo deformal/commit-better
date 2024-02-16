@@ -48,4 +48,4 @@ async function gitCommit() {
   });
 }
 
-gitCommit().catch((err) => console.error(err));
+gitCommit();
