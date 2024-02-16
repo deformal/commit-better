@@ -19,7 +19,7 @@ function gitAddAll() {
   const command = "git add .";
   exec(command, (stderr, stdout) => {
     if (stderr) {
-      console.error(stderr);
+      console.log(stderr);
     }
     if (stdout) {
       console.log(stdout);
