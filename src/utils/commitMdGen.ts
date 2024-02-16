@@ -5,16 +5,16 @@ export function CreateMarkdownFile() {
   const content: string = `
 ${commitQuestion.getTitle().trim()}
 
-Features
----
+a. Features
+
 ${commitQuestion.getFeature().split(",").join("\n")}
 
-Fixes
----
+b. Fixes
+
 ${commitQuestion.getIssue().split(",").join("\n")}
 
-Improvements
----
+c. Improvements
+
 ${commitQuestion.getImprovement().split(",").join("\n")}
 `;
 
