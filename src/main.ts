@@ -37,28 +37,24 @@ async function gitAddAll() {
 }
 
 async function gitCommit() {
-  try {
-    const question = "Please Enter a commit message: ";
-    const rl = createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
+  const question = "Please Enter a commit message: ";
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-    rl.question(question, async (message: string) => {
-      await gitAddAll();
-      const command = `git commit -m '${message}'`;
-      const { stdout, stderr } = await execCommand(command);
-      if (stderr) {
-        console.info(stderr);
-      }
-      if (stdout) {
-        console.info(stdout);
-      }
-      rl.close();
-    });
-  } catch (err) {
-    console.error(err);
-  }
+  rl.question(question, async (message: string) => {
+    await gitAddAll();
+    const command = `git commit -m '${message}'`;
+    const { stdout, stderr } = await execCommand(command);
+    if (stderr.length) {
+      console.info(stderr);
+    }
+    if (stdout) {
+      console.info(stdout);
+    }
+    rl.close();
+  });
 }
 
 gitCommit().catch((err) => console.error(err));
