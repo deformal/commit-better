@@ -1,8 +1,8 @@
 class CommitQuestions {
-  private title: string = "";
-  private feature: string = "none";
-  private issues: string = "none";
-  private improvement: string = "none";
+  private title: string = '';
+  private feature: string = 'none';
+  private issues: string = 'none';
+  private improvement: string = 'none';
   constructor() {}
   setTitle(summary: string) {
     this.title = summary;
