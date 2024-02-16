@@ -5,19 +5,17 @@ export function CreateMarkdownFile() {
   const content: string = `
 ${commitQuestion.getTitle().trim()}
 
-Features
 
-${commitQuestion.getFeature().trim()}
+Features
+  1. ${commitQuestion.getFeature().trim()}
 
 
 Issues Fixed
-
-${commitQuestion.getIssue().trim()}
+  1. ${commitQuestion.getIssue().trim()}
 
 
 Improvements
-
-${commitQuestion.getImprovement().trim()}
+  1. ${commitQuestion.getImprovement().trim()}
 `;
 
   fs.writeFileSync(".git/commit_summary.md", content);
