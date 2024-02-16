@@ -1,9 +1,10 @@
 {
   "name": "better-commit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "bin": "./dist/main.js",
+  "description": "A simple tool do a better commit, which allows better communication between software development teams.",
+  "bin": {
+    "better-commit": "dist/main.js"
+  },
   "scripts": {
     "build": "node esbuild.config.js",
     "start": "node ./dist/main.js"
@@ -22,6 +23,5 @@
     "better commit",
     "git commit"
   ],
-  "author": "deformal",
-  "dependencies": {}
+  "author": "deformal-main"
 }
