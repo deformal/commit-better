@@ -3,31 +3,7 @@
 import { exec } from "child_process";
 import { createInterface } from "readline";
 
-function gitStatus() {
-  const gitStatus = "git status";
-  exec(gitStatus, (stderr, stdout) => {
-    if (stderr) {
-      console.error(stderr);
-    }
-    if (stdout) {
-      console.log(stdout);
-    }
-  });
-}
-
-function gitAddAll() {
-  const command = "git add .";
-  exec(command, (stderr, stdout) => {
-    if (stderr) {
-      console.log(stderr);
-    }
-    if (stdout) {
-      console.log(stdout);
-    }
-  });
-}
-
-async function gitCommit() {
+function gitCommit() {
   const question = "Please Enter a commit message: ";
   const rl = createInterface({
     input: process.stdin,
@@ -36,12 +12,15 @@ async function gitCommit() {
 
   rl.question(question, (message: string) => {
     const command = `git commit -m '${message}'`;
-    exec(command, (stderr, stdout) => {
+    exec(command, (error, stderr, stdout) => {
+      if (error) {
+        console.info(error.message);
+      }
       if (stderr) {
-        console.log(stderr);
+        console.error(stderr);
       }
       if (stdout) {
-        console.log(stdout);
+        console.info(stdout);
       }
     });
     rl.close();
