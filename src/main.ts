@@ -57,9 +57,7 @@ async function gitCommit() {
       rl.close();
     });
   } catch (err) {
-    const error = err as Error;
-    console.error(error.message);
-    return error.message;
+    console.error(err);
   }
 }
 
