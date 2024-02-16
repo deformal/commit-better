@@ -1,0 +1,27 @@
+{
+  "name": "better-commit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "./dist/main.js",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "start": "node ./dist/main.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0"
+  },
+  "keywords": [
+    "cli",
+    "npmtool",
+    "better commit",
+    "git commit"
+  ],
+  "author": "deformal",
+  "dependencies": {}
+}
