@@ -5,7 +5,7 @@ class CommitQuestions {
   private improvement: string = "";
   constructor() {}
   setTitle(summary: string) {
-    this.title = summary.toUpperCase();
+    this.title = summary;
     return this;
   }
 
