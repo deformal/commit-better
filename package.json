@@ -6,7 +6,7 @@
     "commit-better": "dist/main.js"
   },
   "scripts": {
-    "build": "node esbuild.config.js",
+    "build": "node esbuild.config.mjs",
     "start": "node ./dist/main.js"
   },
   "license": "ISC",
