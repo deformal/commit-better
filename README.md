@@ -13,4 +13,4 @@ A simple tool do a better commit, which allows better communication between soft
 3. When you are ready to commit type `commit-better`
 4. Push your changes and checkout the commit message.
 
-Made with love by ❤️ deformal
+Made with love ❤️ by deformal
