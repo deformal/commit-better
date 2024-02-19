@@ -3,7 +3,7 @@ import { build } from 'esbuild';
   await build({
     entryPoints: ['./src/main.ts'],
     bundle: true,
-    minify: false,
+    minify: true,
     sourcemap: false,
     outdir: './dist',
     platform: 'node',
