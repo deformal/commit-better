@@ -1,8 +1,8 @@
 node_modules
 .vscode
-eslintrc.js
+.eslintrc.js
 .prettierrc
-esbuild.config.js
+esbuild.config.mjs
 package-lock.json
 tsconfig.json
 src
