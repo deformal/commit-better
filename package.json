@@ -1,6 +1,6 @@
 {
   "name": "commit-better",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A simple tool do a better commit, which allows better communication between software development teams.",
   "bin": {
     "commit-better": "dist/main.js"
