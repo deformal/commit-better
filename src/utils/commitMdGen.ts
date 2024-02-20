@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { commitQuestion } from '@utils/commitQuestions';
 
 export function CreateMarkdownFile() {
-  const content: string = `
+   const content: string = `
 ${commitQuestion.getTitle().trim()}
 
 Features
@@ -15,5 +15,5 @@ Improvements
    ${commitQuestion.getImprovement().split(',').join('\n   ')}
 `;
 
-  fs.writeFileSync('.git/commit_summary.md', content);
+   fs.writeFileSync('.git/commit_summary.md', content);
 }
